@@ -1,0 +1,54 @@
+{
+    "name": "brankodragovic/webhook",
+    "description": "webook",
+    "keywords": [
+        "branko dragovic",
+        "webhook"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Branko",
+            "email": "braankoo@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "guzzlehttp/guzzle": "^7.5",
+        "psr/http-client": "^1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "BrankoDragovic\\Webhook\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "BrankoDragovic\\Webhook\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BrankoDragovic\\Webhook\\Providers\\WebhookServiceProvider"
+            ],
+            "aliases": {
+                "Webhook": "BrankoDragovic\\Webhook\\Facades\\WebhookFacade"
+            }
+        }
+    }
+}
